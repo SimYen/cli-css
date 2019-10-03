@@ -1,11 +1,11 @@
 console.log("hex to hsl loaded");
 
-module.exports.hexToHsl = function(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+const hexRgb = require('./hexToRgb')
 
-    var r = parseInt(result[1], 16);
-    var g = parseInt(result[2], 16);
-    var b = parseInt(result[3], 16);
+module.exports.hexToHsl = function(hex) {
+    var r = hexRgb.hexToRgb(hex).r;
+    var g = hexRgb.hexToRgb(hex).g;
+    var b = hexRgb.hexToRgb(hex).b;
 
     r /= 255, g /= 255, b /= 255;
     var max = Math.max(r, g, b), min = Math.min(r, g, b);
