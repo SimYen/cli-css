@@ -1,5 +1,3 @@
-console.log("rgb to hex loaded");
-
 //for RGB to Hex
 function componentToHex(c) {
   var hex = c.toString(16);
